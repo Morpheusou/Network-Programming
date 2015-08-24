@@ -40,9 +40,9 @@ int main()
 
 			cout << "connection from " << inet_ntoa(client_addr.sin_addr) 
 				<< "port : " << ntohs(client_addr.sin_port) << endl; 
-			server_handler(client_fd);
+			server_handler(client_fd[i]);
 
-			close(fd_client);
+			close(client_fd[i]);
 		}
 	}
 	return 0;
