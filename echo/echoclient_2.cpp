@@ -19,7 +19,7 @@ int main()
 	socklen_t addrlen;
 	bzero(&addr, sizeof(addr));
 	addr.sin_family = AF_INET;
-	 addr.sin_port = htons(12345);
+	addr.sin_port = htons(12345);
 	inet_pton(AF_INET, "10.80.45.149", &addr.sin_addr);
 
 	int client_fd[max_connections] = {0};
@@ -39,6 +39,7 @@ int main()
 			close(client_fd[i]);
 			cout << "connection is finished." << endl;
 		}
-		return 0;
 	}
+
+	return 0;
 }
